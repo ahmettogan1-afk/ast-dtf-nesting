@@ -1,0 +1,18 @@
+{
+  "filename": "AST-663 09,10,2026 377 CM.pdf",
+  "pages": 1,
+  "page_mm": [
+    4999.990068901909,
+    579.9984046088325
+  ],
+  "vector_drawings": 45377,
+  "images": 0,
+  "raw_drawing_bbox_mm": [
+    0.0,
+    -0.9020632637871636,
+    5000.0000596788195,
+    580.3576850043403
+  ],
+  "comparison_performed": false,
+  "reason": "Only already-nested sheet supplied; separate logo originals and quantities are needed. Drawing bbox may include clipped/hidden geometry; not a certified print length."
+}

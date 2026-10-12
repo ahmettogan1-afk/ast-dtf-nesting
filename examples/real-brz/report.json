@@ -1,0 +1,24 @@
+{
+  "source": "Brz deneme pdf.pdf",
+  "analysis_seconds": 0.23266034200014474,
+  "packing_seconds": 3.1876077849999547,
+  "copies": 37,
+  "logo_width_mm": 99.99344351770831,
+  "logo_height_mm": 48.187788858333334,
+  "native_scale": 1,
+  "color_non_rgb": true,
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "count": 37,
+    "length": 366.55382156931927,
+    "minimum_distance_mm": 3.1272997757858314,
+    "geometry_area": 57371.62817478084,
+    "method": "independent GEOS exact-distance sweep on guarded vector geometry"
+  },
+  "output_vector_drawings": 1628,
+  "expected_vector_drawings": 1628,
+  "output_images": 0,
+  "page_width_mm": 579.9999979654947,
+  "page_height_mm": 366.553810289171
+}

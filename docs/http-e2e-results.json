@@ -1,0 +1,15 @@
+{
+  "flow": "real HTTP API + separate worker, pause, process restart, resume, download",
+  "source": "Brz deneme pdf.pdf",
+  "count": 37,
+  "valid": true,
+  "length_mm": 366.55382156931927,
+  "minimum_distance_mm": 3.1272997757858314,
+  "checkpoint_before_pause": 19,
+  "checkpoint_after_pause": 19,
+  "output_vector_drawings": 1628,
+  "output_images": 0,
+  "frontend_http_status": 200,
+  "browser_test": false,
+  "ipad_safari_test": false
+}

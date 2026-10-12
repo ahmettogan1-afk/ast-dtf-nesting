@@ -1,0 +1,26 @@
+[
+  {
+    "copies": 500,
+    "unique_shapes": 3,
+    "rotations_locked": true,
+    "packing_seconds": 10.285040967999976,
+    "validation_seconds": 0.07450592000009237,
+    "peak_process_rss_mb": 129.36328125,
+    "valid": true,
+    "length_mm": 486.82594569811107,
+    "requested_gap_mm": 3,
+    "count": 500
+  },
+  {
+    "copies": 1000,
+    "unique_shapes": 3,
+    "rotations_locked": true,
+    "packing_seconds": 41.70838812599982,
+    "validation_seconds": 0.1449177890001465,
+    "peak_process_rss_mb": 129.73828125,
+    "valid": true,
+    "length_mm": 988.9470805358432,
+    "requested_gap_mm": 3,
+    "count": 1000
+  }
+]

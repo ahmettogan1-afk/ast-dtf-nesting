@@ -1,0 +1,68 @@
+name: ast-dtf-pro
+services:
+  api:
+    build: .
+    image: ast-dtf-pro:0.1.0
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      AST_DATA: /data
+    volumes:
+      - ast-data:/data
+    ports:
+      - "127.0.0.1:8000:8000"
+    networks: [private]
+    read_only: true
+    tmpfs: [/tmp:size=128m]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 3g
+    cpus: 2
+    pids_limit: 80
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/health', timeout=3)"]
+      interval: 20s
+      timeout: 5s
+      retries: 3
+  worker:
+    image: ast-dtf-pro:0.1.0
+    restart: unless-stopped
+    command: ["python", "-m", "backend.worker"]
+    environment:
+      AST_DATA: /data
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+    volumes:
+      - ast-data:/data
+    networks: [private]
+    read_only: true
+    tmpfs: [/tmp:size=64m]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 3g
+    cpus: 2
+    pids_limit: 64
+    depends_on:
+      api:
+        condition: service_healthy
+  caddy:
+    image: caddy:2.10.2-alpine
+    profiles: [internet]
+    restart: unless-stopped
+    environment:
+      DOMAIN: ${DOMAIN:-localhost}
+    ports: ["80:80", "443:443", "443:443/udp"]
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    networks: [private, public]
+    depends_on: [api]
+volumes:
+  ast-data:
+  caddy-data:
+  caddy-config:
+networks:
+  private:
+    internal: true
+  public:
